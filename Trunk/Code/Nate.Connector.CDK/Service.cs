@@ -20,7 +20,7 @@ namespace CDK
     class ConnectorService
     {
         #region Instaniation 
-        private Reflector reflector;
+        private static Reflector reflector = new Reflector(Assembly.GetExecutingAssembly());
         public bool IsConnected { get; set; }
         public Guid ConnectorTypeId { get; }
         public void Dispose()
@@ -38,7 +38,6 @@ namespace CDK
 
         public void Connect(ConnectionHelper.ConnectionProperties connectionProps)
         {
-            reflector = new Reflector(Assembly.GetExecutingAssembly());
             IsConnected = true;
         }
 
@@ -184,8 +183,10 @@ namespace CDK
         #region Metadata
         public IMetadataProvider GetMetadataProvider()
         {
-            return reflector.GetMetadataProvider();
+            return mp;
         }
+
+        private static IMetadataProvider mp = new MetadataExt(reflector.GetMetadataProvider());
 
 
 

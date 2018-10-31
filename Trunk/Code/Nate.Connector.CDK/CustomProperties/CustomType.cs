@@ -27,11 +27,11 @@
             }
         }
 
-        public static readonly CustomType Int = new CustomType(typeof(long?));
-        public static readonly CustomType Double = new CustomType(typeof(double?));
-        public static readonly CustomType DateTime = new CustomType(typeof(DateTime?));
-        public static readonly CustomType Guid = new CustomType(typeof(Guid?));
+        public static readonly CustomType Int = new CustomType(typeof(long));
+        public static readonly CustomType Double = new CustomType(typeof(double));
+        public static readonly CustomType DateTime = new CustomType(typeof(DateTime));
+        public static readonly CustomType Guid = new CustomType(typeof(Guid));
         public static readonly CustomType String = new CustomType(typeof(string));
-        public static readonly CustomType Bool = new CustomType(typeof(bool?));
+        public static readonly CustomType Bool = new CustomType(typeof(bool));
     }
 }
